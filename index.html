@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Dallas Weather by Zip Code</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-resource/dist/vue-resource.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<div id="app">
+  <h3>Dallas Zip Codes</h3>
+    <router-link to="/">Home</router-link>
+  <ul>
+  <li v-for="zip in zip_codes">
+    <a :href="zip | addDetailToUrl">{{ zip }}</a></li>
+  </ul>
+  <p>
+  <h4>{{weather_main}}</h4>
+    <h4>{{weather_description}}</h4>
+    <img :src="weather_icon" />
+    </li>
+
+  </p>
+  <router-view></router-view>
+</div>
+  
+    <script src="js/index.js"></script>
+
+</body>
+</html>
